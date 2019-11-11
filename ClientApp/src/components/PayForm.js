@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import {Row, Col, Container} from "react-bootstrap";
 
 class PayForm extends Component {
   constructor(props) {
@@ -48,25 +49,62 @@ class PayForm extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Amount
-          <input
-            type="number"
-            value={this.state.amount}
-            onChange={this.handleAmountChange}
-          />
-        </label>
-        <label>
-          Reference
-          <input
-            type="text"
-            value={this.state.reference}
-            onChange={this.handleReferenceChange}
-          />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+        <Container>
+          <Row>
+            
+          </Row>
+          <Row>
+            <Col>
+              
+            </Col>
+            <Col>
+              <form onSubmit={this.handleSubmit}>
+                <Row>
+                  <Col>
+                    <p>Amount</p>
+                  </Col>
+                  <Col>
+                    <label>
+                      <input
+                          type="number"
+                          value={this.state.amount}
+                          onChange={this.handleAmountChange}
+                      />
+                    </label>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p>Reference</p>
+                  </Col>
+                  <Col>
+                    <label>
+                      <input
+                          type="text"
+                          value={this.state.reference}
+                          onChange={this.handleReferenceChange}
+                      />
+                    </label>
+                  </Col>
+                  
+                </Row>
+                <Row>
+                  <Col>
+                    <input type="submit" value="Pay" />
+                  </Col>
+                </Row>
+                
+              </form>
+            </Col>
+            <Col>
+              
+            </Col>
+          </Row>
+          <Row>
+            
+          </Row>
+        </Container>
+      
     );
   }
 }

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db1f79c-ac9f-4f29-9be5-bb83358479a5" name="Default Changelist" comment="" />
+    <list default="true" id="1db1f79c-ac9f-4f29-9be5-bb83358479a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PayGeorge.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PayGeorge.dir/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PayGeorge.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PayGeorge.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/components/PayForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/components/PayForm.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +25,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Properties/launchSettings.json" />
-        <option value="$PROJECT_DIR$/Controllers/PaymentsController.cs" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Controllers/PaymentsController.cs" />
+        <option value="$PROJECT_DIR$/ClientApp/src/components/PayForm.js" />
       </list>
     </option>
   </component>
@@ -30,6 +37,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/AzureWebAppSSLManager-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -50,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Azure - Publish Web App.PayGeorge">
+  <component name="RunManager" selected=".NET Launch Settings Profile.PayGeorge">
     <configuration name="PayGeorge" type="AzureDotNetWebAppPublish" factoryName="Azure Web App">
       <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/PayGeorge.csproj" />
       <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="de7057b8-16a0-427c-b611-6334f858a3e5" />
@@ -130,7 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573507361767</updated>
       <workItem from="1573507364674" duration="945000" />
-      <workItem from="1573508335399" duration="1641000" />
+      <workItem from="1573508335399" duration="3108000" />
     </task>
     <servers />
   </component>
