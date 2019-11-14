@@ -27,7 +27,7 @@ namespace PayGeorge.Controllers
 
 
 
-            HttpResponseMessage response = null;
+            HttpResponseMessage response;
 
             using (var request = new HttpRequestMessage(new HttpMethod("POST"), "https://pay-api.truelayer.com/single-immediate-payments"))
             {
@@ -69,7 +69,7 @@ namespace PayGeorge.Controllers
 
 
 
-            HttpResponseMessage response = null;
+            HttpResponseMessage response;
 
             using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://pay-api.truelayer.com/single-immediate-payments/" + id))
             {
@@ -80,19 +80,10 @@ namespace PayGeorge.Controllers
 
 
 
-            if (response.IsSuccessStatusCode)
-            {
-                return StatusCode(200, response.Content.ReadAsStringAsync().Result);
-            }
-
-
-
-
-
-            return StatusCode(500, "Could not retrieve payment state");
+            return response.IsSuccessStatusCode ? StatusCode(200, response.Content.ReadAsStringAsync().Result) : StatusCode(500, "Could not retrieve payment state");
         }
 
-        private string GetToken(HttpClient client)
+        private static string GetToken(HttpClient client)
         {
 
             var requestBody = new Dictionary<string, string>()
@@ -121,7 +112,7 @@ namespace PayGeorge.Controllers
     }
 
 
-    public class AuthResponse
+    public abstract class AuthResponse
     {
         public string access_token { get; set; }
         public string expires_in { get; set; }
