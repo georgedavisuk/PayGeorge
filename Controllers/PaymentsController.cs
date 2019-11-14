@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -14,23 +10,20 @@ namespace PayGeorge.Controllers
     [Route("api/[controller]")]
     public class PaymentsController : Controller
     {
-
         [HttpGet("[action]")]
         public IActionResult CreatePayment(string amount, string reference)
         {
             var client = new HttpClient();
             var token = GetToken(client);
-            if (token == "could not retrieve token")
-            {
-                return StatusCode(500, token);
-            }
+            if (token == "could not retrieve token") return StatusCode(500, token);
 
             HttpResponseMessage response;
 
-            using (var request = new HttpRequestMessage(new HttpMethod("POST"), "https://pay-api.truelayer.com/single-immediate-payments"))
+            using (var request = new HttpRequestMessage(new HttpMethod("POST"),
+                "https://pay-api.truelayer.com/single-immediate-payments"))
             {
                 request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + token);
-                var content = new CreatePaymentObject()
+                var content = new CreatePaymentObject
                 {
                     amount = amount,
                     currency = "GBP",
@@ -47,37 +40,38 @@ namespace PayGeorge.Controllers
 
                 response = client.SendAsync(request).Result;
             }
-            
-            return response.IsSuccessStatusCode ? StatusCode(200, response.Content.ReadAsStringAsync().Result) : StatusCode(500, "Could not create payment");
+
+            return response.IsSuccessStatusCode
+                ? StatusCode(200, response.Content.ReadAsStringAsync().Result)
+                : StatusCode(500, "Could not create payment");
         }
 
         [HttpGet("[action]")]
         public IActionResult GetPaymentState(string id)
         {
-
             var client = new HttpClient();
             var token = GetToken(client);
-            if (token == "could not retrieve token")
-            {
-                return StatusCode(500, token);
-            }
-            
+            if (token == "could not retrieve token") return StatusCode(500, token);
+
             HttpResponseMessage response;
 
-            using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://pay-api.truelayer.com/single-immediate-payments/" + id))
+            using (var request = new HttpRequestMessage(new HttpMethod("GET"),
+                "https://pay-api.truelayer.com/single-immediate-payments/" + id))
             {
                 request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + token);
                 response = client.SendAsync(request).Result;
             }
-            
-            return response.IsSuccessStatusCode ? StatusCode(200, response.Content.ReadAsStringAsync().Result) : StatusCode(500, "Could not retrieve payment state");
+
+            return response.IsSuccessStatusCode
+                ? StatusCode(200, response.Content.ReadAsStringAsync().Result)
+                : StatusCode(500, "Could not retrieve payment state");
         }
 
         private static string GetToken(HttpClient client)
         {
-            var requestBody = new Dictionary<string, string>()
+            var requestBody = new Dictionary<string, string>
             {
-                {"grant_type",  "client_credentials"},
+                {"grant_type", "client_credentials"},
                 {"client_id", Environment.GetEnvironmentVariable("TRUELAYER_ID")},
                 {"client_secret", Environment.GetEnvironmentVariable("TRUELAYER_SECRET")},
                 {"scope", "payments"}
@@ -91,11 +85,10 @@ namespace PayGeorge.Controllers
             var result = JsonConvert.DeserializeObject<AuthResponse>(response.Content.ReadAsStringAsync().Result);
             return result.access_token;
         }
-
     }
 
 
-    public abstract class AuthResponse
+    public class AuthResponse
     {
         public string access_token { get; set; }
         public string expires_in { get; set; }

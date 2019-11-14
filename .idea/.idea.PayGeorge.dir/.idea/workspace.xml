@@ -30,6 +30,7 @@
   <component name="ProjectId" id="1TUGf3XmKRSlu6XDg6HluBd3BGX" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -142,7 +143,7 @@
       <workItem from="1573599764874" duration="232000" />
       <workItem from="1573600070675" duration="335000" />
       <workItem from="1573600542994" duration="1443000" />
-      <workItem from="1573651922989" duration="2629000" />
+      <workItem from="1573651922989" duration="2882000" />
     </task>
     <servers />
   </component>
