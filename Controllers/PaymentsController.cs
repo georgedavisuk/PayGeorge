@@ -25,8 +25,6 @@ namespace PayGeorge.Controllers
                 return StatusCode(500, token);
             }
 
-
-
             HttpResponseMessage response;
 
             using (var request = new HttpRequestMessage(new HttpMethod("POST"), "https://pay-api.truelayer.com/single-immediate-payments"))
@@ -49,10 +47,7 @@ namespace PayGeorge.Controllers
 
                 response = client.SendAsync(request).Result;
             }
-
-
-
-
+            
             return response.IsSuccessStatusCode ? StatusCode(200, response.Content.ReadAsStringAsync().Result) : StatusCode(500, "Could not create payment");
         }
 
@@ -66,9 +61,7 @@ namespace PayGeorge.Controllers
             {
                 return StatusCode(500, token);
             }
-
-
-
+            
             HttpResponseMessage response;
 
             using (var request = new HttpRequestMessage(new HttpMethod("GET"), "https://pay-api.truelayer.com/single-immediate-payments/" + id))
@@ -76,16 +69,12 @@ namespace PayGeorge.Controllers
                 request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + token);
                 response = client.SendAsync(request).Result;
             }
-
-
-
-
+            
             return response.IsSuccessStatusCode ? StatusCode(200, response.Content.ReadAsStringAsync().Result) : StatusCode(500, "Could not retrieve payment state");
         }
 
         private static string GetToken(HttpClient client)
         {
-
             var requestBody = new Dictionary<string, string>()
             {
                 {"grant_type",  "client_credentials"},

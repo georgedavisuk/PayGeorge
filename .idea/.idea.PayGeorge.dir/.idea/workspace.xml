@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db1f79c-ac9f-4f29-9be5-bb83358479a5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Controllers/PaymentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PaymentsController.cs" afterDir="false" />
-    </list>
+    <list default="true" id="1db1f79c-ac9f-4f29-9be5-bb83358479a5" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +142,7 @@
       <workItem from="1573599764874" duration="232000" />
       <workItem from="1573600070675" duration="335000" />
       <workItem from="1573600542994" duration="1443000" />
-      <workItem from="1573651922989" duration="2274000" />
+      <workItem from="1573651922989" duration="2629000" />
     </task>
     <servers />
   </component>
