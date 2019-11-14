@@ -98,15 +98,9 @@ namespace PayGeorge.Controllers
 
             var response = client.PostAsync("https://auth.truelayer.com/connect/token", content).Result;
 
-            if (response.IsSuccessStatusCode)
-            {
-                var result = JsonConvert.DeserializeObject<AuthResponse>(response.Content.ReadAsStringAsync().Result);
-                return result.access_token;
-            }
-
-
-
-            return "could not retrieve token";
+            if (!response.IsSuccessStatusCode) return "could not retrieve token";
+            var result = JsonConvert.DeserializeObject<AuthResponse>(response.Content.ReadAsStringAsync().Result);
+            return result.access_token;
         }
 
     }
