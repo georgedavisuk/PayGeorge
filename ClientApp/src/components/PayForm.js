@@ -6,7 +6,7 @@ class PayForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      amount: 0.0,
+      amount: null,
       reference: "",
       paymentId: null,
       paymentMade: false,
@@ -69,6 +69,8 @@ class PayForm extends Component {
                           type="number"
                           value={this.state.amount}
                           onChange={this.handleAmountChange}
+                          placeholder="0.01"
+                          required
                       />
                     </label>
                   </Col>
@@ -83,6 +85,8 @@ class PayForm extends Component {
                           type="text"
                           value={this.state.reference}
                           onChange={this.handleReferenceChange}
+                          placeholder="reference"
+                          required
                       />
                     </label>
                   </Col>

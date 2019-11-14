@@ -18,15 +18,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Controllers/PaymentsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/PaymentsController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Controllers/PaymentsController.cs" />
+        <option value="$PROJECT_DIR$/Properties/launchSettings.json" />
+        <option value="$PROJECT_DIR$/PayGeorge.csproj" />
+        <option value="$USER_HOME$/.dotnet/sdk/3.0.100/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" />
         <option value="$PROJECT_DIR$/ClientApp/src/components/PayForm.js" />
       </list>
     </option>
@@ -44,7 +46,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -58,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.PayGeorge">
+  <component name="RunManager" selected="Azure - Publish Web App.PayGeorge">
     <configuration name="PayGeorge" type="AzureDotNetWebAppPublish" factoryName="Azure Web App">
       <option name="AZURE_WEB_APP_PROJECT" value="$PROJECT_DIR$/PayGeorge.csproj" />
       <option name="AZURE_WEB_APP_SUBSCRIPTION_ID" value="de7057b8-16a0-427c-b611-6334f858a3e5" />
@@ -72,7 +75,7 @@
       <option name="AZURE_WEB_APP_SERVICE_PLAN_ID" value="/subscriptions/de7057b8-16a0-427c-b611-6334f858a3e5/resourceGroups/PayGeorge/providers/Microsoft.Web/serverfarms/paygeorge" />
       <option name="AZURE_WEB_APP_SERVICE_PLAN_NAME" value="" />
       <option name="AZURE_WEB_APP_LOCATION" value="eastus" />
-      <option name="AZURE_WEB_APP_PRICING_TIER" value="S1" />
+      <option name="AZURE_WEB_APP_PRICING_TIER" value="" />
       <option name="AZURE_WEB_APP_NET_FRAMEWORK" value="4.7" />
       <option name="AZURE_WEB_APP_NET_CORE_RUNTIME" value="DOTNETCORE 2.1" />
       <option name="AZURE_SQL_DATABASE_SUBSCRIPTION_ID" value="de7057b8-16a0-427c-b611-6334f858a3e5" />
@@ -139,6 +142,13 @@
       <updated>1573507361767</updated>
       <workItem from="1573507364674" duration="945000" />
       <workItem from="1573508335399" duration="3108000" />
+      <workItem from="1573554085195" duration="886000" />
+      <workItem from="1573578825947" duration="1710000" />
+      <workItem from="1573599669432" duration="61000" />
+      <workItem from="1573599764874" duration="232000" />
+      <workItem from="1573600070675" duration="335000" />
+      <workItem from="1573600542994" duration="1443000" />
+      <workItem from="1573651922989" duration="1968000" />
     </task>
     <servers />
   </component>
@@ -152,7 +162,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
