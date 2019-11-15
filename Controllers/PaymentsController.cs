@@ -20,7 +20,7 @@ namespace PayGeorge.Controllers
             HttpResponseMessage response;
 
             using (var request = new HttpRequestMessage(new HttpMethod("POST"),
-                "https://pay-api.truelayer.com/single-immediate-payments"))
+                Environment.GetEnvironmentVariable("TRUELAYER_DOMAIN") + "/single-immediate-payments"))
             {
                 request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + token);
                 var content = new CreatePaymentObject
@@ -56,7 +56,7 @@ namespace PayGeorge.Controllers
             HttpResponseMessage response;
 
             using (var request = new HttpRequestMessage(new HttpMethod("GET"),
-                "https://pay-api.truelayer.com/single-immediate-payments/" + id))
+                Environment.GetEnvironmentVariable("TRUELAYER_DOMAIN") + "/single-immediate-payments/" + id))
             {
                 request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + token);
                 response = client.SendAsync(request).Result;
@@ -79,7 +79,7 @@ namespace PayGeorge.Controllers
 
             var content = new FormUrlEncodedContent(requestBody);
 
-            var response = client.PostAsync("https://auth.truelayer.com/connect/token", content).Result;
+            var response = client.PostAsync(Environment.GetEnvironmentVariable("TRUELAYER_AUTHLINK"), content).Result;
 
             if (!response.IsSuccessStatusCode) return "could not retrieve token";
             var result = JsonConvert.DeserializeObject<AuthResponse>(response.Content.ReadAsStringAsync().Result);

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db1f79c-ac9f-4f29-9be5-bb83358479a5" name="Default Changelist" comment="" />
+    <list default="true" id="1db1f79c-ac9f-4f29-9be5-bb83358479a5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Controllers/PaymentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/PaymentsController.cs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +30,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1TUGf3XmKRSlu6XDg6HluBd3BGX" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
