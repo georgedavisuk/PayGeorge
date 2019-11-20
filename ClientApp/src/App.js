@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter, Route } from "react-router-dom";
 import PayForm from "./components/PayForm";
 import Callback from "./components/Callback";
+import RequestForm from "./components/RequestForm";
 
 function App() {
   return (
@@ -26,6 +27,15 @@ function App() {
             </div>
           )}
         />
+          <Route
+              exact={true}
+              path="/request"
+              render={() => (
+                  <div className="App">
+                      <RequestForm />
+                  </div>
+              )}
+          />
       </div>
     </BrowserRouter>
     // <div className="App">

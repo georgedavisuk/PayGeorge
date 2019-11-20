@@ -53,6 +53,7 @@
             <e p="Callback.js" t="Include" />
             <e p="FetchData.js" t="Include" />
             <e p="PayForm.js" t="Include" />
+            <e p="RequestForm.js" t="Include" />
           </e>
           <e p="index.js" t="Include" />
           <e p="logo.svg" t="Include" />
