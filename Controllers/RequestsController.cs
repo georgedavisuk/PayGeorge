@@ -29,8 +29,8 @@ namespace PayGeorge.Controllers
 
             var message = MessageResource.Create(
                 body: name + " has requested £" + amountDouble + " from you. Pay with this link:" + paymentObject.results[0].auth_uri,
-                from: new Twilio.Types.PhoneNumber("+447447990785"),
-                to: new Twilio.Types.PhoneNumber("+447749193293")
+                from: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("TWILLIO_NUMBER")),
+                to: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("GEORGE_NUMBER"))
             );
 
             return StatusCode(200, "Complete");
