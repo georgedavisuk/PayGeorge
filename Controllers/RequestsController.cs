@@ -33,7 +33,7 @@ namespace PayGeorge.Controllers
                 to: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("GEORGE_NUMBER"))
             );
 
-            return StatusCode(200, "Complete");
+            return StatusCode(200, paymentObject.results[0].simp_id);
         }
     }
 

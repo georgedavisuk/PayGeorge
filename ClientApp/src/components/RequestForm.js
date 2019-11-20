@@ -67,7 +67,12 @@ class RequestForm extends Component {
             .then(response => response.text())
             .then(data => {
                 this.setState({ requestResult: data, paymentMade: true });
-                alert("Result: " + this.state.requestResult);
+                if(this.state.requestResult === "Could not create payment"){
+                    alert("Request failed, please check your request and try again")
+                }
+                else{
+                    this.props.history.push("/callback?payment_id=" + this.state.requestResult.replace('"', '').replace('"', ''));
+                }
             });
 
         event.preventDefault();
