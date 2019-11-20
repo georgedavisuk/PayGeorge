@@ -45,6 +45,41 @@ namespace PayGeorge.Controllers
                 ? StatusCode(200, response.Content.ReadAsStringAsync().Result)
                 : StatusCode(500, "Could not create payment");
         }
+        
+        public static string CreatePaymentOutbound(string amount, string reference, string name, string accountNumber, string sortCode)
+        {
+            var client = new HttpClient();
+            var token = GetToken(client);
+            if (token == "could not retrieve token") return token;
+
+            HttpResponseMessage response;
+
+            using (var request = new HttpRequestMessage(new HttpMethod("POST"),
+                Environment.GetEnvironmentVariable("TRUELAYER_DOMAIN") + "/single-immediate-payments"))
+            {
+                request.Headers.TryAddWithoutValidation("Authorization", "Bearer " + token);
+                var content = new CreatePaymentObject
+                {
+                    amount = amount,
+                    currency = "GBP",
+                    remitter_reference = reference,
+                    beneficiary_reference = reference,
+                    beneficiary_name = name,
+                    beneficiary_sort_code = sortCode,
+                    beneficiary_account_number = accountNumber,
+                    redirect_uri = Environment.GetEnvironmentVariable("REDIRECT_URI")
+                };
+
+                request.Content = new StringContent(JsonConvert.SerializeObject(content));
+                request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                response = client.SendAsync(request).Result;
+            }
+
+            return response.IsSuccessStatusCode
+                ? response.Content.ReadAsStringAsync().Result
+                : "Could not create payment";
+        }
 
         [HttpGet("[action]")]
         public IActionResult GetPaymentState(string id)
